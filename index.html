@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <title>Todolist app</title>
+    <script defer src="runtime.js"></script>
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="todo-wrapper">
+        <div class="todo-box">
+          <div class="todo-head">
+            <h1>Todoay's To Do</h1>
+            <svg width="32" height="32" viewBox="0 0 24 24">
+              <path
+                fill="currentColor"
+                d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6c0 1.01-.25 1.97-.7 2.8l1.46 1.46A7.93 7.93 0 0 0 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6c0-1.01.25-1.97.7-2.8L5.24 7.74A7.93 7.93 0 0 0 4 12c0 4.42 3.58 8 8 8v3l4-4l-4-4v3z"
+              />
+            </svg>
+          </div>
+          <div class="todo-add">
+            <input
+              id="task-field"
+              type="text"
+              placeholder="Add to your list..."
+            />
+            <svg width="32" height="32" viewBox="0 0 24 24">
+              <path
+                fill="currentColor"
+                d="M19 6a1 1 0 0 0-1 1v4a1 1 0 0 1-1 1H7.41l1.3-1.29a1 1 0 0 0-1.42-1.42l-3 3a1 1 0 0 0-.21.33a1 1 0 0 0 0 .76a1 1 0 0 0 .21.33l3 3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42L7.41 14H17a3 3 0 0 0 3-3V7a1 1 0 0 0-1-1Z"
+              />
+            </svg>
+          </div>
+          <ul class="todo-list"></ul>
+          <div class="clear-all">
+            <button>Clear all completed</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
