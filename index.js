@@ -10,7 +10,6 @@ class ComplatedTasks {
   static checkTask(tasksArr) {
     const tasksList = document.querySelector(".todo-list");
     const checkBox = document.querySelectorAll("input[name=checkbox]");
-
     if (tasksList.hasChildNodes()) {
       checkBox.forEach((check) => {
         check.addEventListener("change", (e) => {
@@ -37,7 +36,6 @@ class ComplatedTasks {
   static taskDecoration(tasksArr) {
     const tasksList = document.querySelector(".todo-list");
     const checkBox = document.querySelectorAll("input[name=checkbox]");
-
     if (tasksList.hasChildNodes()) {
       checkBox.forEach((check) => {
         const checkMark = check.nextElementSibling;
@@ -59,7 +57,6 @@ class HandleLocalStorage {
   static addTasksToLs(tasksArr) {
     window.localStorage.setItem("tasks", JSON.stringify(tasksArr));
   }
-
   static removeItemsFromLs(tasksArr, taskId) {
     tasksArr.forEach((task, index) => {
       if (task.index === Number(taskId)) {
@@ -96,7 +93,6 @@ class HandleLocalStorage {
 }
 
 class TaskDeletion {
-  // Delete task from the UI
   static delTaskFromUi(tasksArr) {
     const tasksList = document.querySelector(".todo-list");
     if (tasksList.hasChildNodes()) {
@@ -117,7 +113,6 @@ class TaskDeletion {
 }
 
 class Tasks {
-  // Getting the task from the field
   static tasksGenerator() {
     const taskField = document.querySelector("#task-field");
     let tasksArr;
@@ -127,7 +122,6 @@ class Tasks {
       const lsItems = JSON.parse(localStorage.getItem("tasks"));
       tasksArr = lsItems;
     }
-
     taskField.addEventListener("keypress", (e) => {
       if (e.target.value !== "" && e.key === "Enter") {
         const userTask = new TaskConstructor(
@@ -137,19 +131,14 @@ class Tasks {
         );
         tasksArr.push(userTask);
         e.target.value = "";
-        // Ivoking adding items to the local storage function
         HandleLocalStorage.addTasksToLs(tasksArr);
         window.location.reload();
       }
     });
     tasksArr.forEach((task) => Tasks.setTasksInUi(task));
-    // Delete task from UI
     TaskDeletion.delTaskFromUi(tasksArr);
-    // test
     ComplatedTasks.checkTask(tasksArr);
-    // test2
     ComplatedTasks.taskDecoration(tasksArr);
-    // test3
     HandleLocalStorage.clearAllCompleted(tasksArr);
   }
 
@@ -164,7 +153,6 @@ class Tasks {
           <h2 class="task-name" contenteditable="true">${task.name}</h2>
         </div>
         <img class="edit-icon" src="https://api.iconify.design/material-symbols:delete-outline.svg" />
-        
         </li>
     `;
   }
